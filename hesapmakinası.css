@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /*  Bir nesnenin kapladığı alan nesnenin genişliği + padding + border değerlerinin toplamıdır.  */
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.2rem;
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    width: 400px;
+    position: absolute;  /*  Bir nesnenin position özelliğini absolute yaptığımızda o nesne normal akış içinden çıkar ayrıca 4 köşeden konumlandırma yapmamızı sağlar.   */
+    top: 50%;  /*  position absolute özelliğini kullanabilmek için yukarıdan aşağı doğru bir değer girilmesini sağlar  */
+    left: 50%;   /*  aynı şekilde sağdan ve soldan da değer verilebilir  */
+    transform: translate(-50%,-50%);  /*  elementin merkezini 0 kabul eder ve girilen değerler kadar önce yukarı veya aşağı sonraki girilen değerde ise sağa veya sola kayar  */
+}
+
+.calculator-input {
+    width: 100%;
+    font-size: 4rem;
+    height: 100px;
+    border: none;
+    background-color: #252525;
+    color: #fff;
+    text-align: right;
+    padding: 0 20px;
+}
+
+button {
+    height: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    background-color: transparent;   /*  arkaplan rengini saydam yapar  */
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /*  grid yapısı içerisinde kolonların 4 elemanlı tekrar etmesini sağlar  */
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+button:hover {
+    background-color: #eaeaea;
+}
+
+.operator {
+    color: #337cac;
+}
+
+.clear {
+    background-color: #f0595f ;
+    border-color: #b0353a;
+    color: #fff;
+}
+
+.clear:hover {
+    background-color: #f17377;
+}
+
+.equal-sign:hover {
+    background-color: #4e9ed4;
+}
+
+.equal-sign {
+    background-color: #2e86c0;
+    border-color: #337cac;
+    color: #fff;
+    grid-area: 2/4/6/5;
+    height: 100%;
+}
